@@ -14,13 +14,8 @@ public class VisitorController {
 
     private final AtomicInteger counter = new AtomicInteger();
 
-    /*
-    Jedis jedis = new Jedis("localhost");
-    jedis.set("foo", "bar");
-    String value = jedis.get("foo");
-     */
     @RequestMapping("/visit")
-    public Visitor visit(@RequestParam(value="name", defaultValue="Juan") String name) {
+    public Visitor visit(@RequestParam(value="name", defaultValue="Tuvieja") String name) {
         Visitor v = visitorTracking.get(name);
         if(v == null){
             v = new Visitor(counter.getAndIncrement(), name);
