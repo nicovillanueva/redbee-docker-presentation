@@ -1,0 +1,7 @@
+Assets:
+    Terminal Debian VM
+    Debian container
+    Python webserver
+    Basic Dockerfile (use FROM busybox ?)
+    Kali container
+    Working Compose + Machine + Swarm (could use Py webserver)

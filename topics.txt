@@ -1,0 +1,45 @@
+What is Docker
+    Containerization, LxC, comparison with VMs, shared resources
+    DEMO: Docker vs VM boot times ?
+
+Concepts
+    Layers
+    Images
+    Containers
+
+Dockerfile building
+    basic statements
+    layers vs cmd concatenation
+    cmd vs entrypoint
+    DEMO: Build dockerfile (note layers, image and container)
+
+Docker basic commands
+    run / start
+    exec
+    rm / rmi
+    ps / ps -a / images
+
+Ephemeral containers
+    --rm vs persistence of containers
+    volumes (mapped to host folder, or not)
+    DEMO: with/without rm, mapping volume or not
+
+Inter-container communication
+    docker0 net interface
+    pinging between containers
+    pinging from host (docker inspect)
+    port exposure/mapping
+    DEMO: Quick dockerized webserver, exposing port or not
+
+Host resources usage
+    --privileged
+    --net sharing
+    DEMO: Kali controlling wlan0
+
+Other docker projects
+    Compose
+    Machine
+    Swarm
+    DEMO: Compose into Vagrant and scale
+
+Q&A

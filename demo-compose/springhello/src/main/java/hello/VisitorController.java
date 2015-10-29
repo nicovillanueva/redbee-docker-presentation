@@ -1,0 +1,32 @@
+package hello;
+
+import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import redis.clients.jedis.Jedis;
+
+@RestController
+public class VisitorController {
+
+    HashMap<String, Visitor> visitorTracking = new HashMap<>();
+
+    private final AtomicInteger counter = new AtomicInteger();
+
+    /*
+    Jedis jedis = new Jedis("localhost");
+    jedis.set("foo", "bar");
+    String value = jedis.get("foo");
+     */
+    @RequestMapping("/visit")
+    public Visitor visit(@RequestParam(value="name", defaultValue="Juan") String name) {
+        Visitor v = visitorTracking.get(name);
+        if(v == null){
+            v = new Visitor(counter.getAndIncrement(), name);
+            visitorTracking.put(name, v);
+        }
+        v.visit();
+        return v;
+    }
+}
