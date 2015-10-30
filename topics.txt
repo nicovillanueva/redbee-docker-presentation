@@ -38,8 +38,9 @@ Host resources usage
 
 Other docker projects
     Compose
+        DEMO: SpringBoot + Redis
     Machine
+        DEMO: Virtualbox machine
+        DEMO: AWS machine
     Swarm
-    DEMO: Compose into Vagrant and scale
-
-Q&A
+        DEMO: Virtualbox cluster
