@@ -1,1 +1,8 @@
 docker-machine create --driver=virtualbox local-dev
+
+docker-machine create --driver amazonec2 \
+                      --amazonec2-region us-west-2 \
+                      --amazonec2-zone a \
+                      --amazonec2-ami ami-5189a661 \
+                      --amazonec2-subnet-id subnet-0bb8d87c \
+                      aws-demo

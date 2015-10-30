@@ -1,0 +1,16 @@
+Get Swarm token
+    docker run --rm swarm create
+
+Swarm-enabled machines:
+    docker-machine create --driver virtualbox --swarm --swarm-master --swarm-discovery token://<token> demo-master
+    docker-machine create --driver virtualbox --swarm --swarm-discovery token://<token> demo-swarm-0
+    docker-machine create --driver virtualbox --swarm --swarm-discovery token://<token> demo-swarm-1
+    docker-machine create --driver virtualbox --swarm --swarm-discovery token://<token> demo-swarm-2
+
+------ not necessary ------
+
+Join swarm (at node)
+    docker run -d swarm join --addr=<node-ip>:2376 token://<cluster-token>
+
+Manage swarm
+    docker run -d -p <manager_port>:2375 swarm manage token://<cluster-token>

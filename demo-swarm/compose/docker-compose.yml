@@ -1,0 +1,6 @@
+web:
+    image: p0bailey/docker-flask
+red:
+    image: redis
+rab:
+    image: rabbitmq

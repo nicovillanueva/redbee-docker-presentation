@@ -1,0 +1,11 @@
+web:
+    image: redbee/docker-demo
+    ports:
+        - "8080"
+    links:
+        - db
+    restart: "always"
+db:
+    image: redis
+    ports:
+        - "6379:6379"

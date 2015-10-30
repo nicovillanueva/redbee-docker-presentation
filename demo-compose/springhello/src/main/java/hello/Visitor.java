@@ -9,7 +9,7 @@ public class Visitor {
     private int visits;
 
     private int redisVisits;
-    Jedis jedis = new Jedis("localhost");
+    Jedis jedis = new Jedis("democompose_db_1");
 
     public Visitor (int id, String name) {
         this.id = id;
