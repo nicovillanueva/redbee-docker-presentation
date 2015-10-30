@@ -1,5 +1,8 @@
 docker-machine create --driver=virtualbox local-dev
 
+# NOTE: El driver de AWS necesita la secret key, la access key y la vpc id (las puede levantar de env vars)
+# https://docs.docker.com/machine/drivers/aws/
+
 docker-machine create --driver amazonec2 \
                       --amazonec2-region us-west-2 \
                       --amazonec2-zone a \
